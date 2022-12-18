@@ -6,7 +6,8 @@ public class Dev {
     private String nome;
     private Set<Conteudo> conteudosInscritos = new LinkedHashSet<>();
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
-
+    private Set<Bootcamp> mentorias = new LinkedHashSet<>();
+    
     public void inscreverBootcamp(Bootcamp bootcamp){
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
         bootcamp.getDevsInscritos().add(this);
@@ -62,6 +63,15 @@ public class Dev {
         this.conteudosConcluidos = conteudosConcluidos;
     }
 
+      
+    public Set<Bootcamp> getMentorias() {
+        return mentorias;
+    }
+
+    public void setMentorias(Set<Bootcamp> mentorias) {
+        this.mentorias = mentorias;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -74,4 +84,6 @@ public class Dev {
     public int hashCode() {
         return Objects.hash(nome, conteudosInscritos, conteudosConcluidos);
     }
+
+    
 }
