@@ -7,21 +7,28 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
+
+        // Create a tutor of a content
+        Dev tutorGlauco = new Dev();
+        tutorGlauco.setNome("Glauco");
+
         Curso curso1 = new Curso();
         curso1.setTitulo("curso java");
         curso1.setDescricao("descrição curso java");
         curso1.setCargaHoraria(8);
+        curso1.setTutor(tutorGlauco);
 
         Curso curso2 = new Curso();
         curso2.setTitulo("curso js");
         curso2.setDescricao("descrição curso js");
         curso2.setCargaHoraria(4);
+        curso2.setTutor(tutorGlauco);
 
         Mentoria mentoria = new Mentoria();
         mentoria.setTitulo("mentoria de java");
         mentoria.setDescricao("descrição mentoria java");
         mentoria.setData(LocalDate.now());
- 
+        mentoria.setTutor(tutorGlauco);
 
         Bootcamp bootcamp = new Bootcamp();
         bootcamp.setNome("Bootcamp Java Developer");
@@ -29,15 +36,10 @@ public class Main {
         bootcamp.getConteudos().add(curso1);
         bootcamp.getConteudos().add(curso2);
         bootcamp.getConteudos().add(mentoria);
-
-        //Create a mentor of a BootCamp
-        Dev mentorGlauco = new Dev();
-        mentorGlauco.setNome("Glauco");
-        mentorGlauco.getMentorias().add(bootcamp);
-        bootcamp.getMentoresInscritos().add(mentorGlauco);
-
-        mentoria.setMentor(mentorGlauco);
-
+        
+        tutorGlauco.getTutorias().add(curso1);
+        tutorGlauco.getTutorias().add(curso2);
+        tutorGlauco.getTutorias().add(mentoria);
 
         Dev devCamila = new Dev();
         devCamila.setNome("Camila");

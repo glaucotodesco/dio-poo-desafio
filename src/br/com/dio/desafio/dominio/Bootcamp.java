@@ -11,8 +11,7 @@ public class Bootcamp {
     private String descricao;
     private final LocalDate dataInicial = LocalDate.now();
     private final LocalDate dataFinal = dataInicial.plusDays(45);
-
-    private Set<Dev> mentoresInscritos = new HashSet<>();
+ 
     private Set<Dev> devsInscritos = new HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
 
@@ -57,14 +56,6 @@ public class Bootcamp {
         this.conteudos = conteudos;
     }
 
-    public Set<Dev> getMentoresInscritos() {
-        return mentoresInscritos;
-    }
-
-    public void setMentoresInscritos(Set<Dev> mentoresInscritos) {
-        this.mentoresInscritos = mentoresInscritos;
-    }
-    
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

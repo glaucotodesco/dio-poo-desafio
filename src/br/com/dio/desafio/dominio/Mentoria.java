@@ -5,7 +5,6 @@ import java.time.LocalDate;
 public class Mentoria extends Conteudo{
 
     private LocalDate data;
-    private Dev mentor;
 
     @Override
     public double calcularXp() {
@@ -23,14 +22,6 @@ public class Mentoria extends Conteudo{
         this.data = data;
     }
 
-    public Dev getMentor() {
-        return mentor;
-    }
-
-    public void setMentor(Dev mentor) {
-        this.mentor = mentor;
-    }
-
     
     @Override
     public String toString() {
@@ -38,7 +29,7 @@ public class Mentoria extends Conteudo{
                 "titulo='" + getTitulo() + '\'' +
                 ", descricao='" + getDescricao() + '\'' +
                 ", data=" + data +
-                ", mentor=" + mentor.getNome() +
+                ", tutor=" + getTutor().getNome() +
                 '}';
     }
 

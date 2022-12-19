@@ -6,7 +6,7 @@ public class Dev {
     private String nome;
     private Set<Conteudo> conteudosInscritos = new LinkedHashSet<>();
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
-    private Set<Bootcamp> mentorias = new LinkedHashSet<>();
+    private Set<Conteudo> tutorias = new LinkedHashSet<>();
     
     public void inscreverBootcamp(Bootcamp bootcamp){
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
@@ -63,13 +63,12 @@ public class Dev {
         this.conteudosConcluidos = conteudosConcluidos;
     }
 
-      
-    public Set<Bootcamp> getMentorias() {
-        return mentorias;
+    public Set<Conteudo> getTutorias() {
+        return tutorias;
     }
 
-    public void setMentorias(Set<Bootcamp> mentorias) {
-        this.mentorias = mentorias;
+    public void setTutorias(Set<Conteudo> tutorias) {
+        this.tutorias = tutorias;
     }
 
     @Override
@@ -84,6 +83,9 @@ public class Dev {
     public int hashCode() {
         return Objects.hash(nome, conteudosInscritos, conteudosConcluidos);
     }
+
+  
+  
 
     
 }
